@@ -1,0 +1,142 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+.separationSearch{
+display: block;
+text-align: center;
+margin: 10px;
+}
+
+input{
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+    border-radius: 5%;
+    width: 250px;
+    margin:5px;
+}
+button{
+    background-color:transparent;
+    border:1px solid black ;
+    border-radius: 5%;
+    margin: 5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button:hover{
+    background-color: rgb(206, 205, 205);
+}
+li img{
+width: 30px;
+}
+header img{
+    max-height: 50px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.changes{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+
+.marquee{
+    animation: marquee 50s linear infinite;
+    width: 100vw;
+    
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform:translateX(-100vw);
+    }
+    100% {
+        transform:translateX(100vw);
+    }
+  }
+
+  .marquee .listsymbol{
+      margin-left: 10px;
+      margin-right: 5px;
+  }
+
+  .highlight{
+    background-color: yellow;
+  }
+
+.allmains{
+display: flex;
+justify-content: space-between;
+width: 100%;
+align-content: space-between;
+
+}
+
+main{
+    margin:15px 30px;
+    min-width: 30%;
+    height: 100%;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+   color: rgb(174, 172, 172);
+ 
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+.marqueeDiv{
+    background-color:rgb(239, 237, 237);
+    border-bottom: 0.5px solid black;
+}
+ul{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+li{
+    display: flex;
+    margin-bottom: 15px;
+    width: 600px;
+    justify-content: space-between;
+}
+
+a{
+    display: flex;
+    color:grey;
+}
+
+img{
+    margin-right: 15px;
+}
+
+canvas{
+margin: 20px;
+}
+
+.compInfo{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#compareDiv{
+align-items: center;
+}
+
+p.marqueeDiv{
+    font-size: 20px;
+    padding-left: 30px;
+}
+
+.size{
+    width: 45vw;
+}

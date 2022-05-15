@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel = "stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100;1,200&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Compare</title>
+</head>
+
+<body>
+  <p class = "marqueeDiv">Compare</p>
+    <div id = "spinner-border" class= "spinner-border d-none" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+<div class = "allmains">
+<main id = "compInfo1">
+
+</main>
+<main id = "compInfo2">
+
+</main>
+<main id = "compInfo3">
+
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src = "CompanyInfo.js"></script>
+<script>
+  (async function(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const symbols = urlParams.get('symbols').split(",");
+    if(symbols[0]){
+    const compInfo1 = new CompanyInfo(document.getElementById('compInfo1'), symbols[0]);
+    await compInfo1.load();
+    await compInfo1.addChart();
+    }
+    if(symbols[1]){
+    const compInfo2 = new CompanyInfo(document.getElementById('compInfo2'), symbols[1]);
+    await compInfo2.load();
+    await compInfo2.addChart();
+    }else{
+      const compInfo2 =document.getElementById('compInfo2');
+      compInfo2.classList.add("d-none");
+    }
+
+    if(symbols[2]){
+    const compInfo3 = new CompanyInfo(document.getElementById('compInfo3'), symbols[2]);
+    await compInfo3.load();
+    await compInfo3.addChart();
+    }else{
+      const compInfo3 =document.getElementById('compInfo3');
+      compInfo3.classList.add("d-none");
+      const compInfo2 =document.getElementById('compInfo2');
+      compInfo2.classList.add("size");
+      const compInfo1 =document.getElementById('compInfo1');
+      compInfo1.classList.add("size");
+    }
+  })();
+</script>
+</body>
+</html>
